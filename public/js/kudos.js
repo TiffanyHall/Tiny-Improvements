@@ -22,10 +22,10 @@ const render = function (kudosList) {
         $('#kudos').append(`<div class="card">
 
         <h4>${kudosList[i].title}<h3>
-        <p>To: ${dataList[i].to[0].name}</p>
+        <p>To: ${kudosList[i].to[0].name}</p>
         <div class="card-body">
-        <p>From: ${dataList[i].from[0].name}</p>
-        <h6>${dataList[i].body}</h6>
+        <p>From: ${kudosList[i].from[0].name}</p>
+        <h6>${kudosList[i].body}</h6>
         </div>`);
 
     }
