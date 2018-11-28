@@ -21,11 +21,10 @@ const render = function (kudosList) {
     for (let i = 0; i < kudosList.length; i++) {
         $('#kudos').append(`<div class="card">
 
-        <h4>${kudosList[i].title}<h3>
-        <p>To: ${kudosList[i].to[0].name}</p>
-        <div class="card-body">
-        <p>From: ${kudosList[i].from[0].name}</p>
-        <h6>${kudosList[i].body}</h6>
+        <h3>${kudosList[i].title}<h3>
+        <h6>To: ${kudosList[i].to[0].username}</h6>
+        <h6>From: ${kudosList[i].from[0].username}</h6>
+        <h4>${kudosList[i].body}</h4>
         </div>`);
 
     }
@@ -50,8 +49,8 @@ const getUsers = function () {
         .then(function (data) {
 console.log(data)
             for (let i = 0; i < data.length; i++) {
-                $('#kudo-from').append(`<option value='${data[i]._id}'>${data[i].name}</option>`)
-                $('#kudo-to').append(`<option value='${data[i]._id}'>${data[i].name}</option>`)
+                $('#kudo-from').append(`<option value='${data[i]._id}'>${data[i].username}</option>`)
+                $('#kudo-to').append(`<option value='${data[i]._id}'>${data[i].username}</option>`)
             };
         });
 }
@@ -80,7 +79,6 @@ const postKudo = function (event) {
         $.post('/api/kudo', kudo)
             .then(function (data) {
 
-                console.log(data)
                 // clear input fields and hide modal once post is made
 
                 $('#kudo-title').val('');

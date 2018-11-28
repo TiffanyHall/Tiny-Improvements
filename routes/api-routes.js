@@ -6,7 +6,6 @@ module.exports = function (app) {
     app.get("/api/users", function(req, res){
         db.Users.find({})
         .then(function (data){
-            console.log("this is my data", data)
             res.json(data);
         })
         .catch(function (error){

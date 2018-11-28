@@ -1,28 +1,88 @@
- html {
+ body  {
+    background-image: url("./images/desk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
 
+.card {
+    background-image: url("./images/crossword.png");
+    border: 3px solid #82a891;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.modal-content {
+    background-image: url("./images/crossword.png");
+    border: 3px solid #82a891;
 }
 
 .title-header {
     float: left;
     width: 90%;
+    font-family: 'Text Me One', sans-serif;
 }
 
 .title-icon {
     float: right;
 }
 
-.card {
-    text-align: center;
-}
 
 .card-body {
     text-align: center;
+    font-family: 'Ranga', cursive;
+
 }
 
 #text-body {
-    /* height: 200%; */
+    height: 200%;
  }
 
 .form-area {
   margin: 5px 0;
 } 
+
+.kudos-modal.btn {
+
+    background-color: #82a891;
+    border: 1px solid black;
+}
+
+.btn-primary {
+    float: right;
+}
+
+.modal-title {
+    font-family: 'Text Me One', sans-serif;
+
+}
+
+p {
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+h6 {
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+h4 {
+    font-family: 'Patrick Hand', cursive;
+
+}
+
+.btn-secondary{
+    background-color: #82a891;
+    border: 1px solid black;
+}
+
+#send-kudo.btn {
+    background-color: #fff;
+    color: #000;
+    border: 1rgb(64, 67, 97)px solid #000000;
+}
+
+button.btn {
+    border: 1px solid #000000;
+
+}
