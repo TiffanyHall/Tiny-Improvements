@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 var KudoSchema = new Schema({
+  title: {
+    type: String
+  },
   body: {
     type: String
   },
@@ -10,14 +13,14 @@ var KudoSchema = new Schema({
   to: [
     {
       type: Schema.Types.ObjectId,
-      ref: "user"
+      ref: "User"
     }
   ],
 
   from: [
     {
       type: Schema.Types.ObjectId,
-      ref: "user"
+      ref: "User"
     }
   ]
 

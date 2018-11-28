@@ -14,11 +14,22 @@ module.exports = function (app) {
         })
      
     });
+    app.post("/api/users", function(req, res){
+        db.Users.create(req.body)
+        .then(function (data){
+            res.json(data);
+        })
+        .catch(function (error){
+            res.json(error);
+        })
+     
+    });
 
 
     app.get("/api/kudo", function(req, res){
         db.Kudo.find({})
-        .populate('user')
+        .populate('to')
+        .populate('from')
         .then(function (data){
             res.json(data);
         })
@@ -27,23 +38,21 @@ module.exports = function (app) {
         })
     });
 
-    app.post("/api/kudo", function(req, res){
-        console.log(req.body)
-        db.Kudo.create(req.body)
-        .then(function (data){
-           
-           console.log("create response:", data)
-            db.Users.find({})
-            .then(function (data){console.log(data)})
-            .catch(function(error){
-                res.json(error);
-            });
-            // res.json(data);
+    app.post('/api/kudo', function (req, res) {
+        const newEntry = {
+          title: req.body.title,
+          body: req.body.body,
+          to: req.body.to,
+          from: req.body.from
+        }
+        db.Kudo.create(newEntry)
+        .then(function(data) {
+          res.json(data);
         })
-        .catch(function (error){
-            res.json(error);
-        })
-    });
-
-} 
+        .catch(function (error) {
+          res.json(error);
+        });
+      });
+    }
+    
 
